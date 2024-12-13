@@ -73,19 +73,17 @@
 
 .header__logo {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0;
-    font-size: 35px;
+    padding: 8px 0;
+    font-size: 28px;
     font-weight: bold;
 
-h1 {
+    h1 {
         margin: 0;
-        color: #0f2a1d; 
+        color: #0f2a1d;
         animation: colorChange 6s ease-in-out infinite;
 
         /* Gradient mượt mà cho chữ logo */
-        background-image: linear-gradient(-1deg, #0F2A1D , #E3EED4, #375534, #6B9071, #AEC3B0);
+        background-image: linear-gradient(-1deg, #0f2a1d, #e3eed4, #375534, #6b9071, #aec3b0);
         background-clip: text;
         color: transparent;
     }
@@ -103,39 +101,48 @@ h1 {
     }
 }
 
-
 //menu
 
 .header__menu {
-    padding: 25px;
+    padding: 20px 0 19px 0px;
     border-bottom: 1px solid map.get($theme-colores, "border");
 
     ///
 
     ul {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
+        justify-content: space-between;
+
 
         li {
-            margin: 0 20px;
-            position: relative;
-
+            list-style: none;
             a {
-                color: map.get($theme-colores, "normal-text");
                 text-decoration: none;
-                font-size: 20px;
+                font-size: 18px;
+                color: map.get($theme-colores, "normal-text");
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                transform: all 0.3s;
+                padding: 5px 0;
+                display: block;
+
+
             }
+        }
+        .active a {
+            color: map.get($theme-colores, "primary");
         }
     }
 }
+
+
 
 // giỏ hàng
 .header__cart {
     display: flex;
     column-gap: 10px;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     padding: 20px 0;
 

@@ -29,7 +29,7 @@ const HomePage = () => {
     {
       name: "Sản Phẩm",
       path: ROUTERS.USERS.HOME,
-      isShowSubMenu: true, // Đảm bảo flag này được khai báo đúng
+      isShowSubMenu: false, // Đảm bảo flag này được khai báo đúng
       child: [
         {
           name: "Trái Cây Tươi Nhập Khẩu",
@@ -45,10 +45,10 @@ const HomePage = () => {
         },
       ],
     },
-    // {
-    //   name: "Bài Viết",
-    //   path: ROUTERS.USERS.HOME,
-    // },
+    {
+      name: "Bài Viết",
+      path: ROUTERS.USERS.HOME,
+    },
     {
       name: "Giới thiệu",
       path: ROUTERS.USERS.HOME,
@@ -108,20 +108,17 @@ const HomePage = () => {
               <h1>Mía Food</h1>
             </div>
           </div>
+          {/* menu */}
           <div className="col-xl-6 col-lg-6 ">
-            <div className="header__menu">
-              <nav className="header__menu_nav">
-                <ul>
-                  {Menus?.map((menu, menuKey) => {
-                    return (
-                      <li key={menuKey}>
-                        <Link to={menu?.path}>{menu?.name}</Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
-            </div>
+            <nav className="header__menu">
+              <ul>
+                {Menus?.map((menu, menuKey) => (
+                  <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
+                    <Link to={menu?.path}>{menu?.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
           <div className="col-xl-3 col-lg-3 ">
             <div className="header__cart">
