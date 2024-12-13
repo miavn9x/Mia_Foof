@@ -1,6 +1,8 @@
 //import
-
 import { memo } from "react";
+
+// import { memo, useState } from "react";
+
 import "./style.scss";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillTikTok } from "react-icons/ai";
@@ -28,7 +30,7 @@ const HomePage = () => {
     },
     {
       name: "Sản Phẩm",
-      path: ROUTERS.USERS.HOME,
+      path: "/",
       isShowSubMenu: false, // Đảm bảo flag này được khai báo đúng
       child: [
         {
@@ -115,6 +117,15 @@ const HomePage = () => {
                 {Menus?.map((menu, menuKey) => (
                   <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
                     <Link to={menu?.path}>{menu?.name}</Link>
+                    {menu.child && (
+                      <ul className="header__menu__dropdown">
+                        {menu.child.map((childItem, childKey) => (
+                          <li key={`${menuKey}-${childKey}`}>
+                            <Link to={childItem.path}>{childItem.name} </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>

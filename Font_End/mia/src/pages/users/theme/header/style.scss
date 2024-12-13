@@ -71,10 +71,11 @@
     color: #00fda0;
 }
 
+//logo
 .header__logo {
     display: flex;
-    padding: 8px 0;
-    font-size: 28px;
+    padding: 15px 0;
+    font-size: 22px;
     font-weight: bold;
 
     h1 {
@@ -113,12 +114,12 @@
         display: flex;
         justify-content: space-between;
 
-
         li {
             list-style: none;
+            position: relative;
             a {
                 text-decoration: none;
-                font-size: 18px;
+                font-size: 17px;
                 color: map.get($theme-colores, "normal-text");
                 text-transform: uppercase;
                 font-weight: bold;
@@ -126,17 +127,48 @@
                 transform: all 0.3s;
                 padding: 5px 0;
                 display: block;
-
-
             }
         }
+
+        li:hover .header__menu__dropdown {
+            opacity: 1;
+            visibility: visible;
+            color: white;
+            padding: 0 20px;
+            font-family: "Calibri", sans-serif;
+            font-size: 18px;
+        }
+
         .active a {
             color: map.get($theme-colores, "primary");
         }
+
+        .header__menu__dropdown {
+            background-color: map.get($theme-colores, "hover-text");
+            display: block;
+            position: absolute;
+            width: 230px;
+            z-index: 9;
+            padding: 5px 0;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            margin-top: 19.5px;
+
+            li {
+                a {
+                    text-transform: capitalize;
+                    color: white;
+                    font-weight: 700;
+                    padding: 5px 15px;
+                }
+                :hover {
+                    color: map.get($theme-colores, "normal-text");
+                }
+            }
+        }
     }
 }
-
-
 
 // giỏ hàng
 .header__cart {
