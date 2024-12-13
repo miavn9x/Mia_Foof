@@ -1,0 +1,30 @@
+$DESKTOP: "DESKTOP";
+$MEDIUM: "MEDIUM";
+$TABLET: "TABLET";
+$MOBILE: "MOBILE";
+$SMALL: "SMALL";
+
+
+@mixin responsive($canvas) {
+    @if $canvas == $DESKTOP {
+        @media (min-width: 1400px) {
+            @content;
+        }
+    } @else if $canvas == $MEDIUM {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    } @else if $canvas == $TABLET {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    } @else if $canvas == $MOBILE {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $canvas == $SMALL {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+}
