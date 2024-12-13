@@ -1,0 +1,36 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+
+.header__top{
+    background: map.get($theme-colores, "main");
+}
+.header__top_right{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 11px 0 10px;
+
+    ul{
+        display: flex; //hien thi ngang
+        column-gap: 10px; // khoảng cách giữa các phần tử
+        list-style: none; // bỏ dấu chấm
+
+        a {
+            font-size: 20px;
+            display: inline-block;
+           color: map.get($theme-colores, "normal-text");
+        }
+li:last-child{
+    cursor: pointer;
+    margin-left: 10px;
+}
+li{
+    display: flex;
+}
+        span{
+            font-size: 20px;
+            margin-left: 5px;
+      }
+    }
+}
