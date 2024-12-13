@@ -1,4 +1,16 @@
-$theme-colores : (
-    "main": #ebebeb,
-    "normal-text": #1c1c1c
-)
+$theme-colores: (
+  "main": #d4d8dd,
+  "normal-text": #1a2d42,
+   "primary": #4caf50,         // Xanh lá cây tươi - Tượng trưng cho sự tự nhiên và tươi mới
+  "secondary": #f57c00,       // Cam đậm - Tạo cảm giác ấm áp, nổi bật
+  "background": #f9f9f9,      // Trắng sáng nhẹ - Tạo sự sạch sẽ và thoáng đãng
+  "text-primary": #2e2e2e,    // Xám đậm - Màu chữ chính, rõ ràng
+  "text-secondary": #6d6d6d,  // Xám nhạt hơn - Màu chữ phụ, nhẹ nhàng
+  "highlight": #ff5252,       // Đỏ cam - Điểm nhấn quan trọng như giảm giá
+  "border": #e0e0e0,          // Xám nhạt - Viền nhẹ nhàng
+  "accent": #ffe082,         // Vàng pastel - Tạo điểm nhấn tinh tế
+  "dark": #000000,
+"hover-text": #c0c8ca
+);
+
+

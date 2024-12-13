@@ -2,7 +2,7 @@
 @import "style/pages/theme";
 
 .header__top {
-    background: map.get($theme-colores, "main");
+    background-color: map.get($theme-colores, "main");
 }
 
 .header__top_left {
@@ -15,7 +15,7 @@
 
         li {
             font-size: 15px;
-            color: map-get($theme-colores, "normal-text");
+            color: map.get($theme-colores, "normal-text");
             display: flex;
             align-items: center;
             column-gap: 14px;
@@ -62,10 +62,115 @@
         span {
             font-size: 15px;
             margin-left: 5px;
+            color: map.get($theme-colores, "normal-text");
         }
     }
 }
 
 .header__top_right ul:hover {
     color: #00fda0;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 35px;
+    font-weight: bold;
+
+h1 {
+        margin: 0;
+        color: #0f2a1d; 
+        animation: colorChange 6s ease-in-out infinite;
+
+        /* Gradient mượt mà cho chữ logo */
+        background-image: linear-gradient(-1deg, #0F2A1D , #E3EED4, #375534, #6B9071, #AEC3B0);
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+
+//menu
+
+.header__menu {
+    padding: 25px;
+    border-bottom: 1px solid map.get($theme-colores, "border");
+
+    ///
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+        li {
+            margin: 0 20px;
+            position: relative;
+
+            a {
+                color: map.get($theme-colores, "normal-text");
+                text-decoration: none;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// giỏ hàng
+.header__cart {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    ul {
+        display: flex;
+        margin-right: 25px;
+
+        li {
+            list-style: none;
+            position: relative;
+            margin-left: 20px;
+
+            svg {
+                font-size: 25px;
+                color: map.get($theme-colores, "normal-text");
+            }
+
+            span {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: map.get($theme-colores, "primary");
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                color: #fff;
+            }
+
+            :link {
+                text-decoration: none;
+            }
+        }
+    }
 }

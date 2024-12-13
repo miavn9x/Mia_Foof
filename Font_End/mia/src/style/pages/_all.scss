@@ -17,7 +17,6 @@ body {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    background: map.get($theme-colores, "main");
     margin: auto;
 }
 
@@ -30,14 +29,36 @@ body {
     max-width: 50%;
 }
 
+// máy tính
+
+@include responsive($DESKTOP) {
+    .col-xl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-xl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+// máy tính nho
 @include responsive($MEDIUM) {
-    
     .col-lg-3 {
         flex: 0 0 25%;
         max-width: 25%;
     }
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
-
+// ípad
+@include responsive($TABLET) {
+}
+//điện thoại
+@include responsive($MOBILE) {
+}
+// ???
 @include responsive($SMALL) {
-
 }

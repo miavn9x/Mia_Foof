@@ -10,9 +10,51 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { LuMailMinus } from "react-icons/lu";
 import { FaShippingFast } from "react-icons/fa";
 import { formatter } from "../../../../utils/fomater";
+import { BsCart3 } from "react-icons/bs";
+import { ROUTERS } from "utils/router";
 
 // home
+import { useState } from "react";
+
 const HomePage = () => {
+  const [Menus, setMenu] = useState([
+    {
+      name: "Trang chủ",
+      path: ROUTERS.USERS.HOME,
+    },
+    {
+      name: "Cưa Hàng",
+      path: ROUTERS.USERS.PRODUCTS,
+    },
+    {
+      name: "Sản Phẩm",
+      path: ROUTERS.USERS.HOME,
+      isShowSubMenu: true, // Đảm bảo flag này được khai báo đúng
+      child: [
+        {
+          name: "Trái Cây Tươi Nhập Khẩu",
+          path: ROUTERS.USERS.PRODUCTS,
+        },
+        {
+          name: "Trái Cây Khô",
+          path: ROUTERS.USERS.PRODUCTS,
+        },
+        {
+          name: "Giỏ Quà Tặng Trái",
+          path: ROUTERS.USERS.PRODUCTS,
+        },
+      ],
+    },
+    // {
+    //   name: "Bài Viết",
+    //   path: ROUTERS.USERS.HOME,
+    // },
+    {
+      name: "Giới thiệu",
+      path: ROUTERS.USERS.HOME,
+    },
+  ]);
+
   return (
     <>
       <div className="header__top">
@@ -58,11 +100,43 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* MENU */}
-
-      <div className="container bg-white ">
+      {/* /logo/ */}
+      <div className="container">
         <div className="row">
-          <div className="col-lg-3">LOGO</div>
+          <div className="col-xl-3 col-lg-3 ">
+            <div className="header__logo">
+              <h1>Mía Food</h1>
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6 ">
+            <div className="header__menu">
+              <nav className="header__menu_nav">
+                <ul>
+                  {Menus?.map((menu, menuKey) => {
+                    return (
+                      <li key={menuKey}>
+                        <Link to={menu?.path}>{menu?.name}</Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-3 ">
+            <div className="header__cart">
+              <div className="header__cart_price">
+                <span> {formatter(8888)}</span>
+              </div>
+              <ul>
+                <li>
+                  <Link to={""}>
+                    <BsCart3 /> <span>0</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>
