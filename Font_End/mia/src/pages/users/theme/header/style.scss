@@ -153,7 +153,7 @@
             transition: all 0.3s;
             opacity: 0;
             visibility: hidden;
-            margin-top: 19.5px;
+            margin-top: 19px;
 
             li {
                 a {
@@ -173,19 +173,19 @@
 // giỏ hàng
 .header__cart {
     display: flex;
-    column-gap: 10px;
+    column-gap: 5px;
     justify-content: end;
     align-items: center;
     padding: 20px 0;
 
     ul {
         display: flex;
-        margin-right: 25px;
+        margin-right: 10px;
 
         li {
             list-style: none;
             position: relative;
-            margin-left: 20px;
+            margin-left: 10px;
 
             svg {
                 font-size: 25px;
@@ -209,6 +209,45 @@
 
             :link {
                 text-decoration: none;
+            }
+        }
+    }
+
+    // tim kiem
+    .header__search {
+        display: flex;
+        align-items: center;
+
+        .header__search-input {
+            padding: 5px 8px;
+            font-size: 14px;
+            border: 1px solid map.get($theme-colores, "border");
+            border-radius: 4px;
+            width: 140px;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: map.get($theme-colores, "primary");
+            }
+        }
+
+        .header__search-button {
+            padding: 5px 6px;
+            margin-left: 5px;
+            background-color: map.get($theme-colores, "primary");
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: map.get($theme-colores, "hover");
+            }
+
+            svg {
+                color: white;
+                font-size: 18px;
             }
         }
     }

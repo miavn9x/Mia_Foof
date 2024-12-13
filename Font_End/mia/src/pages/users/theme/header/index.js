@@ -14,6 +14,8 @@ import { FaShippingFast } from "react-icons/fa";
 import { formatter } from "../../../../utils/fomater";
 import { BsCart3 } from "react-icons/bs";
 import { ROUTERS } from "utils/router";
+//
+import { BsSearch } from "react-icons/bs";
 
 // home
 import { useState } from "react";
@@ -25,8 +27,8 @@ const HomePage = () => {
       path: ROUTERS.USERS.HOME,
     },
     {
-      name: "Cưa Hàng",
-      path: ROUTERS.USERS.PRODUCTS,
+      name: "Giới thiệu",
+      path: ROUTERS.USERS.HOME,
     },
     {
       name: "Sản Phẩm",
@@ -49,10 +51,6 @@ const HomePage = () => {
     },
     {
       name: "Bài Viết",
-      path: ROUTERS.USERS.HOME,
-    },
-    {
-      name: "Giới thiệu",
       path: ROUTERS.USERS.HOME,
     },
   ]);
@@ -131,10 +129,18 @@ const HomePage = () => {
               </ul>
             </nav>
           </div>
-          <div className="col-xl-3 col-lg-3 ">
+          <div className="col-xl-3 col-lg-3">
             <div className="header__cart">
-              <div className="header__cart_price">
-                <span> {formatter(8888)}</span>
+              {/* Search Box */}
+              <div className="header__search">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="header__search-input"
+                />
+                <button className="header__search-button">
+                  <BsSearch />
+                </button>
               </div>
               <ul>
                 <li>
@@ -143,6 +149,9 @@ const HomePage = () => {
                   </Link>
                 </li>
               </ul>
+              <div className="header__cart_price">
+                <span> {formatter(1000000)}</span>
+              </div>
             </div>
           </div>
         </div>
