@@ -1,8 +1,5 @@
 //import
 import { memo } from "react";
-
-// import { memo, useState } from "react";
-
 import "./style.scss";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillTikTok } from "react-icons/ai";
@@ -14,14 +11,17 @@ import { FaShippingFast } from "react-icons/fa";
 import { formatter } from "../../../../utils/fomater";
 import { BsCart3 } from "react-icons/bs";
 import { ROUTERS } from "utils/router";
-//
 import { BsSearch } from "react-icons/bs";
-
-// home
+import React from "react";
 import { useState } from "react";
 
+import Carousel from "../../../../component/Carousel/index.js";
+
+
 const HomePage = () => {
-  const [Menus, setMenu] = useState([
+
+  // const [Menus, setMenu] = useState([
+  const [Menus] = useState([
     {
       name: "Trang chủ",
       path: ROUTERS.USERS.HOME,
@@ -54,6 +54,7 @@ const HomePage = () => {
       path: ROUTERS.USERS.HOME,
     },
   ]);
+
 
   return (
     <>
@@ -99,7 +100,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
       {/* /logo/ */}
       <div className="container">
         <div className="row">
@@ -156,6 +156,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      {/* Carousel Section */}
+      <Carousel /> {/* Embed the carousel here */}
     </>
   );
 };
