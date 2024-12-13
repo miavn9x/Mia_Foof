@@ -1,33 +1,29 @@
-// /components/Carousel/index.js
-import { memo } from "react";
-
-import React, { useState } from "react";
-import "./style.scss";
-
-import slide1 from "../../assets/images/1.jpg";
+import React, { useState, useEffect } from "react";
+import slide1 from "../../assets/images/1.jpg"; 
 import slide2 from "../../assets/images/2.jpg";
 import slide3 from "../../assets/images/3.jpg";
 
+import "./style.scss";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
- const slides = [
-   {
-     image: slide1, // Sử dụng biến đã import
-     caption: "First Slide Caption",
-     description: "This is the first slide description.",
-   },
-   {
-     image: slide2, // Sử dụng biến đã import
-     caption: "Second Slide Caption",
-     description: "This is the second slide description.",
-   },
-   {
-     image: slide3, // Sử dụng biến đã import
-     caption: "Third Slide Caption",
-     description: "This is the third slide description.",
-   },
- ];
+  const slides = [
+    {
+      image: slide1, // Sử dụng biến đã import
+      caption: "First Slide Caption",
+      description: "This is the first slide description.",
+    },
+    {
+      image: slide2, // Sử dụng biến đã import
+      caption: "Second Slide Caption",
+      description: "This is the second slide description.",
+    },
+    {
+      image: slide3, // Sử dụng biến đã import
+      caption: "Third Slide Caption",
+      description: "This is the third slide description.",
+    },
+  ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -39,6 +35,11 @@ const Carousel = () => {
     );
   };
 
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 3000); 
+
+    return () => clearInterval(interval);
+  }, []); 
   return (
     <div className="carousel">
       <div className="carousel-inner">

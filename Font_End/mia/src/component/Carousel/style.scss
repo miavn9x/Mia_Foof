@@ -1,8 +1,32 @@
+
+@import "../../style/pages/responsive";
+
 .carousel {
   position: relative;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+
+  // Apply responsive design
+  @include responsive($DESKTOP) {
+    max-width: 1400px; // Desktop-specific width
+  }
+
+  @include responsive($MEDIUM) {
+    max-width: 1200px; // Adjust for medium screens
+  }
+
+  @include responsive($TABLET) {
+    max-width: 100%; // Tablet-specific width
+  }
+
+  @include responsive($MOBILE) {
+    max-width: 100%; // Mobile-specific width
+  }
+
+  @include responsive($SMALL) {
+    max-width: 100%; // Small screens (e.g., smaller mobile devices)
+  }
 }
 
 .carousel-inner {
@@ -14,13 +38,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px; // Cố định chiều cao cho mỗi item
+  height: 700px; // Keep fixed height for larger screens
+
+  // Adjust height for different devices
+  @include responsive($MOBILE) {
+    height: 400px; // Adjust height for mobile
+  }
+
+  @include responsive($SMALL) {
+    height: 300px; // Further adjustments for small screens
+  }
 }
 
 .carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; // Đảm bảo hình ảnh được căn chỉnh và không bị méo
+  object-fit: cover;
   display: block;
 }
 
@@ -32,6 +65,15 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   font-size: 18px;
+
+  // Adjust font size for smaller screens
+  @include responsive($MOBILE) {
+    font-size: 14px;
+  }
+
+  @include responsive($SMALL) {
+    font-size: 12px;
+  }
 }
 
 .carousel-control-prev,
@@ -45,6 +87,14 @@
   font-size: 30px;
   padding: 10px;
   cursor: pointer;
+
+  @include responsive($MOBILE) {
+    font-size: 24px; // Adjust icon size for mobile
+  }
+
+  @include responsive($SMALL) {
+    font-size: 20px; // Further icon size adjustment for small screens
+  }
 }
 
 .carousel-control-prev {
