@@ -18,7 +18,15 @@ import { useState } from "react";
 import Carousel from "../../../../component/Carousel/index.js";
 
 
+import ProductPage from "../../../../component/ProductPage/index.js";
+
+
+
 const HomePage = () => {
+
+const [showProductPage, setShowProductPage] = useState(false);
+
+
 
   // const [Menus, setMenu] = useState([
   const [Menus] = useState([
@@ -89,7 +97,7 @@ const HomePage = () => {
                     <FaYoutubeSquare />
                   </Link>
                 </li>
-                
+
                 <li>
                   <Link to={""}>
                     <FaRegUserCircle />
@@ -159,6 +167,10 @@ const HomePage = () => {
       </div>
       {/* Carousel Section */}
       <Carousel /> {/* Embed the carousel here */}
+      {/* Điều kiện hiển thị ProductPage hoặc Carousel */}
+      <div>
+        <ProductPage />{" "}
+      </div>
     </>
   );
 };
