@@ -1,31 +1,30 @@
-
 @import "../../style/pages/responsive";
 
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1450px;
   margin: 0 auto;
 
   // Apply responsive design
   @include responsive($DESKTOP) {
-    max-width: 1400px; // Desktop-specific width
+    max-width: 1400px;
   }
 
   @include responsive($MEDIUM) {
-    max-width: 1200px; // Adjust for medium screens
+    max-width: 1200px;
   }
 
   @include responsive($TABLET) {
-    max-width: 100%; // Tablet-specific width
+    max-width: 100%;
   }
 
   @include responsive($MOBILE) {
-    max-width: 100%; // Mobile-specific width
+    max-width: 100%;
   }
 
   @include responsive($SMALL) {
-    max-width: 100%; // Small screens (e.g., smaller mobile devices)
+    max-width: 100%;
   }
 }
 
@@ -38,15 +37,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px; // Keep fixed height for larger screens
+  height: 600px;
 
-  // Adjust height for different devices
   @include responsive($MOBILE) {
-    height: 400px; // Adjust height for mobile
+    height: 400px;
   }
 
   @include responsive($SMALL) {
-    height: 300px; // Further adjustments for small screens
+    height: 300px;
   }
 }
 
@@ -66,7 +64,6 @@
   padding: 10px;
   font-size: 18px;
 
-  // Adjust font size for smaller screens
   @include responsive($MOBILE) {
     font-size: 14px;
   }
@@ -89,11 +86,11 @@
   cursor: pointer;
 
   @include responsive($MOBILE) {
-    font-size: 24px; // Adjust icon size for mobile
+    font-size: 24px;
   }
 
   @include responsive($SMALL) {
-    font-size: 20px; // Further icon size adjustment for small screens
+    font-size: 20px;
   }
 }
 

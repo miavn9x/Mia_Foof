@@ -1,5 +1,6 @@
 @use "sass:map";
 @import "style/pages/theme";
+@import "../../../../../src/style/pages/responsive/";
 
 .header__top {
     background-color: map.get($theme-colores, "main");
@@ -10,7 +11,7 @@
         display: flex;
         align-items: center;
         padding: 11px 0 10px;
-        list-style: none; // bỏ dấu chấm
+        list-style: none; // Bỏ dấu chấm
         column-gap: 14px;
 
         li {
@@ -19,7 +20,17 @@
             display: flex;
             align-items: center;
             column-gap: 14px;
+
+            @include responsive($TABLET) {
+                font-size: 14px;
+            }
+
+            @include responsive($MOBILE) {
+                font-size: 13px;
+                column-gap: 10px;
+            }
         }
+
         li:first-child {
             position: relative;
 
@@ -31,7 +42,26 @@
                 background-color: #080808;
                 opacity: 0.5;
                 content: "";
+
+                @include responsive($MOBILE) {
+                    height: 12px;
+                }
             }
+        }
+    }
+
+    @include responsive($TABLET) {
+        ul {
+            column-gap: 10px;
+        }
+    }
+
+    @include responsive($MOBILE) {
+        ul {
+            flex-direction: column;
+            align-items: flex-start;
+            column-gap: 0;
+            row-gap: 8px;
         }
     }
 }
