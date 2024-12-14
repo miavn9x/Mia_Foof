@@ -70,7 +70,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 11px 0 10px;
+    padding-right: 30px;
 
     ul {
         display: flex; //hien thi ngang
@@ -82,10 +82,7 @@
             display: inline-block;
             color: map.get($theme-colores, "normal-text");
         }
-        li:last-child {
-            cursor: pointer;
-            margin-left: 10px;
-        }
+
         li {
             display: flex;
         }
@@ -94,6 +91,7 @@
             margin-left: 5px;
             color: map.get($theme-colores, "normal-text");
         }
+        
     }
 }
 
