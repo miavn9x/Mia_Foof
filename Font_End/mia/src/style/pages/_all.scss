@@ -4,19 +4,18 @@
 
 html,
 body {
-    margin: 0;
     font-family: "Noto Serif", serif;
 }
 
 * {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
 .container {
     max-width: 1400px;
-    width: 100%;
+    width: 75%;
     padding-left: 15px;
     padding-right: 15px;
     margin: auto;
@@ -29,6 +28,10 @@ body {
 .col-6 {
     flex: 0 0 50%;
     max-width: 50%;
+}
+.col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
 }
 
 // máy tính
@@ -43,6 +46,11 @@ body {
         flex: 0 0 50%;
         max-width: 50%;
     }
+
+        .col-xl-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
 }
 // máy tính nho
 @include responsive($MEDIUM) {
@@ -54,9 +62,17 @@ body {
         flex: 0 0 50%;
         max-width: 50%;
     }
+       .col-lg-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
 }
 // ípad
 @include responsive($TABLET) {
+           .col-md-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
 }
 //điện thoại
 @include responsive($MOBILE) {

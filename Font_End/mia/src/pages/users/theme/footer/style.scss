@@ -1,3 +1,7 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+
 .footer {
   background-color: #375534;
   color: #fff;
@@ -9,11 +13,15 @@
     justify-content: space-between;
     gap: 20px;
 
-    .footer__info, .footer__branches, .footer__social, .footer__map {
+    .footer__info,
+    .footer__branches,
+    .footer__social,
+    .footer__map {
       flex: 1;
       min-width: 200px;
 
-      h2, h3 {
+      h2,
+      h3 {
         color: #aec3b0;
         margin-bottom: 15px;
       }
@@ -38,6 +46,9 @@
             color: #aec3b0;
           }
         }
+          :hover {
+    color: map.get($theme-colores, "secondary");
+  }
       }
     }
 
@@ -73,4 +84,6 @@
       font-size: 14px;
     }
   }
+
+
 }

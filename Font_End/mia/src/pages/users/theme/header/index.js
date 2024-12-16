@@ -8,25 +8,23 @@ import { Link } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import { LuMailMinus } from "react-icons/lu";
 import { FaShippingFast } from "react-icons/fa";
+import { BsFillMenuButtonWideFill } from "react-icons/bs";
 import { formatter } from "../../../../utils/fomater";
 import { BsCart3 } from "react-icons/bs";
 import { ROUTERS } from "utils/router";
 import { BsSearch } from "react-icons/bs";
 import React from "react";
 import { useState } from "react";
+import "../../../../pages/users/theme/header/style.scss";
 
 import Carousel from "../../../../component/Carousel/index.js";
 
-
 import ProductPage from "../../../../component/ProductPage/index.js";
 
-
-
 const HomePage = () => {
+  const [isshowcategory, setshowcategory] = useState(false); // đặt giá trị hiện thi và đong danh sách
 
-const [showProductPage, setShowProductPage] = useState(false);
-
-
+  const [showProductPage, setShowProductPage] = useState(false);
 
   // const [Menus, setMenu] = useState([
   const [Menus] = useState([
@@ -62,7 +60,6 @@ const [showProductPage, setShowProductPage] = useState(false);
       path: ROUTERS.USERS.HOME,
     },
   ]);
-
 
   return (
     <>
@@ -114,7 +111,9 @@ const [showProductPage, setShowProductPage] = useState(false);
         <div className="row">
           <div className="col-xl-3 col-lg-3 ">
             <div className="header__logo">
-              <h1>Mía Food</h1>
+              <h1 onClick={() => setShowProductPage(!showProductPage)}>
+                Mía Food
+              </h1>
             </div>
           </div>
           {/* menu */}
@@ -165,11 +164,40 @@ const [showProductPage, setShowProductPage] = useState(false);
           </div>
         </div>
       </div>
-      {/* Carousel Section */}
-      <Carousel /> {/* Embed the carousel here */}
-      {/* Điều kiện hiển thị ProductPage hoặc Carousel */}
-      <div>
-        <ProductPage />{" "}
+      {/* /menu/ con */}
+      <div className="container">
+        <div className="row category__all">
+          {/* trai */}
+          <div className="col-xl-3 col-lg-3 category__list">
+            <div
+              className="category_list_menu"
+              onClick={() => setshowcategory(!isshowcategory)}
+            >
+              <BsFillMenuButtonWideFill />
+              <span> Danh sách Sản Phẩm</span>
+            </div>
+            {isshowcategory && (
+              <ul>
+                <li>
+                  <Link to={""}>Trái Cây Tươi Nhập Khẩu</Link>
+                </li>
+                <li>
+                  <Link to={""}>Trái Cây Khô</Link>
+                </li>
+                <li>
+                  <Link to={""}>Giỏ Quà Tặng Trái</Link>
+                </li>
+              </ul>
+            )}
+          </div>
+          {/* phải */}
+          <div className="col-xl-9 col-lg-9 Carousel__img">
+            <Carousel />
+          </div>
+        </div>
+      </div>
+      <div >
+        <div>{showProductPage && <ProductPage />}</div>
       </div>
     </>
   );

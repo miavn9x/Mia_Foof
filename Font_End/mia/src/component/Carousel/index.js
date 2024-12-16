@@ -41,7 +41,7 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, []); 
   return (
-    <div className="carousel">
+    <div className="carousel ">
       <div className="carousel-inner">
         <div className="carousel-item">
           <img

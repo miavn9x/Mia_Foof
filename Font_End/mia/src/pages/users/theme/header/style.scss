@@ -91,7 +91,6 @@
             margin-left: 5px;
             color: map.get($theme-colores, "normal-text");
         }
-        
     }
 }
 
@@ -135,7 +134,9 @@
 .header__menu {
     padding: 20px 0 19px 0px;
     border-bottom: 1px solid map.get($theme-colores, "border");
-
+    :hover {
+        color: map.get($theme-colores, "secondary");
+    }
     ///
 
     ul {
@@ -205,6 +206,10 @@
     justify-content: end;
     align-items: center;
     padding: 20px 0;
+
+    :hover {
+        color: map.get($theme-colores, "secondary");
+    }
 
     ul {
         display: flex;
@@ -280,3 +285,65 @@
         }
     }
 }
+
+.category__list {
+    position: relative;
+    .category_list_menu {
+        display: flex;
+        background: map.get($theme-colores, "primary");
+        padding: 15px 25px 15px 40px;
+        display: flex;
+        cursor: pointer;
+        font-weight: 700;
+        color: map.get($theme-colores, "normal-text");
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 15px;
+
+        svg,
+        span {
+            font-size: 16px;
+            margin-right: 15px;
+        }
+        svg {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    }
+
+
+    ul {
+        border: 1px solid white;
+        position: absolute;
+        width: 100%;
+        background: map.get($theme-colores, "background");
+        opacity: 1;
+        transition: all 0.3s ease;
+
+        li {
+            list-style: none;
+            position: relative;
+            border-top: 1px solid map.get($theme-colores, "border");
+            border-bottom: 1px solid map.get($theme-colores, "border");
+            background: map.get($theme-colores, "main");
+
+            :link {
+                text-decoration: none;
+            }
+
+
+            a {
+                display: block;
+                padding: 15px 40px;
+                text-transform: capitalize;
+                color: map.get($theme-colores, "normal-text");
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+            :hover {
+        color: map.get($theme-colores, "secondary");
+    }
+    }
+}
+
