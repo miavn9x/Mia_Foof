@@ -98,7 +98,10 @@
     color: #00fda0;
 }
 
-//logo
+.header__{
+  margin: 0 auto;
+      display: flex;
+    justify-content: space-between;  
 .header__logo {
     display: flex;
     padding: 15px 0;
@@ -132,6 +135,7 @@
 //menu
 
 .header__menu {
+
     padding: 20px 0 19px 0px;
     border-bottom: 1px solid map.get($theme-colores, "border");
     :hover {
@@ -359,6 +363,7 @@
       }
     }
   }
+}
 }
 
 

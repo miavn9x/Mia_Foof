@@ -2,75 +2,90 @@
 @import "style/pages/theme";
 
 
+/* Global reset for all elements */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Footer Styles */
 .footer {
   background-color: #375534;
   color: #fff;
   padding: 30px 0;
+
+  .container {
+    display: block;  // Ensure the container takes full width
+    width: 100%;  // Ensure it spans the entire width of the screen
+    max-width: 1200px;  // Optional, you can limit the max width if needed
+    margin: 0 auto;  // Center the container horizontally if necessary
+  }
 
   .footer__top {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-
-    .footer__info,
-    .footer__branches,
-    .footer__social,
-    .footer__map {
-      flex: 1;
-      min-width: 200px;
-
-      h2,
-      h3 {
-        color: #aec3b0;
-        margin-bottom: 15px;
-      }
-
-      p {
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
-
-          svg {
-            font-size: 18px;
-            color: #aec3b0;
-          }
-        }
-          :hover {
-    color: map.get($theme-colores, "secondary");
+    width: 100%;  // Ensure the footer top spans the entire width
   }
+
+  .footer__info,
+  .footer__branches,
+  .footer__social,
+  .footer__map {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer__info h2,
+  .footer__branches h3,
+  .footer__social h3,
+  .footer__map h3 {
+    color: #aec3b0;
+    margin-bottom: 15px;
+  }
+
+  .footer__info p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      svg {
+        font-size: 18px;
+        color: #aec3b0;
       }
     }
+  }
 
-    .footer__social ul {
-      display: flex;
-      gap: 10px;
+  .footer__social ul {
+    display: flex;
+    gap: 10px;
 
-      li a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #375534;
-        color: #fff;
-        font-size: 20px;
-        transition: background 0.3s;
+    li a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #375534;
+      color: #fff;
+      font-size: 20px;
+      transition: background 0.3s;
 
-        &:hover {
-          background: #6b9071;
-        }
+      &:hover {
+        background: #6b9071;
       }
     }
   }
@@ -79,11 +94,10 @@
     text-align: center;
     border-top: 1px solid #375534;
     padding-top: 15px;
+    margin-top: 30px;
 
     p {
       font-size: 14px;
     }
   }
-
-
 }

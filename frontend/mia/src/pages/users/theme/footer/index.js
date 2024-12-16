@@ -1,8 +1,13 @@
-// import { memo, useState } from "react";
-// Footer.js
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa";
 import "./style.scss";
 
 const Footer = () => {

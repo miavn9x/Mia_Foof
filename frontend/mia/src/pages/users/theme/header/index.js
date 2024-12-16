@@ -112,58 +112,65 @@ const HomePage = () => {
         </div>
       </div>
       {/* /logo/ */}
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-3 col-lg-3 ">
-            <div className="header__logo">
-              <h1 onClick={() => setShowProductPage(!showProductPage)}>
-                Mía Food
-              </h1>
-            </div>
-          </div>
-          {/* menu */}
-          <div className="col-xl-6 col-lg-6 ">
-            <nav className="header__menu">
-              <ul>
-                {Menus?.map((menu, menuKey) => (
-                  <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
-                    <Link to={menu?.path}>{menu?.name}</Link>
-                    {menu.child && (
-                      <ul className="header__menu__dropdown">
-                        {menu.child.map((childItem, childKey) => (
-                          <li key={`${menuKey}-${childKey}`}>
-                            <Link to={childItem.path}>{childItem.name} </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-          <div className="col-xl-3 col-lg-3">
-            <div className="header__cart">
-              {/* Search Box */}
-              <div className="header__search">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="header__search-input"
-                />
-                <button className="header__search-button">
-                  <BsSearch />
-                </button>
+      <div className="header__">
+        <div className="container">
+          <div
+            className="row"
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <div className="col-xl-3 col-lg-3 ">
+              <div className="header__logo">
+                <h1 onClick={() => setShowProductPage(!showProductPage)}>
+                  Mía Food
+                </h1>
               </div>
-              <ul>
-                <li>
-                  <Link to={""}>
-                    <BsCart3 /> <span>0</span>
-                  </Link>
-                </li>
-              </ul>
-              <div className="header__cart_price">
-                <span> {formatter(1000000)}</span>
+            </div>
+            {/* menu */}
+            <div className="col-xl-6 col-lg-6 ">
+              <nav className="header__menu">
+                <ul>
+                  {Menus?.map((menu, menuKey) => (
+                    <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
+                      <Link to={menu?.path}>{menu?.name}</Link>
+                      {menu.child && (
+                        <ul className="header__menu__dropdown">
+                          {menu.child.map((childItem, childKey) => (
+                            <li key={`${menuKey}-${childKey}`}>
+                              <Link to={childItem.path}>{childItem.name} </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+            <div className="col-xl-3 col-lg-3">
+              <div className="header__cart">
+                {/* Search Box */}
+                <div className="header__search">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="header__search-input"
+                  />
+                  <button className="header__search-button">
+                    <BsSearch />
+                  </button>
+                </div>
+                <ul>
+                  <li>
+                    <Link to={""}>
+                      <BsCart3 /> <span>0</span>
+                    </Link>
+                  </li>
+                </ul>
+                <div className="header__cart_price">
+                  <span> {formatter(1000000)}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -185,7 +192,7 @@ const HomePage = () => {
               <ul>
                 <li>
                   <Link to={""}>
-                    <FaHotjar />  Sảm Phẩm Hot
+                    <FaHotjar /> Sảm Phẩm Hot
                   </Link>
                 </li>
                 <li>
