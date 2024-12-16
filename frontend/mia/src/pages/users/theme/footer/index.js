@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         <div className="footer__bottom">
-          <p>© 2024 Mía Food. Đồ án Môn Ứng Dụng Web code ReactJS</p>
+          <p>© 2024 Mía Food. Đồ án Môn Ứng Dụng Web</p>
         </div>
       </div>
     </footer>

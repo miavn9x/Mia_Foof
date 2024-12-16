@@ -6,7 +6,7 @@ $SMALL: "SMALL";
 
 @mixin responsive($canvas) {
     @if $canvas == $DESKTOP {
-        @media (min-width: 1400px) {
+        @media (min-width: 1200px) {
             @content;
         }
     } @else if $canvas == $MEDIUM {

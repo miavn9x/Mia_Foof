@@ -15,6 +15,11 @@ import { ROUTERS } from "utils/router";
 import { BsSearch } from "react-icons/bs";
 import React from "react";
 import { useState } from "react";
+import { FaHotjar } from "react-icons/fa";
+
+
+
+
 import "../../../../pages/users/theme/header/style.scss";
 
 import Carousel from "../../../../component/Carousel/index.js";
@@ -73,7 +78,7 @@ const HomePage = () => {
                 </li>
                 <li>
                   <FaShippingFast />
-                  Miễn phí đơn hàng trên {formatter(500000)}
+                  Miễn phí ship đơn hàng trên {formatter(500000)}
                 </li>
               </ul>
             </div>
@@ -179,6 +184,11 @@ const HomePage = () => {
             {isshowcategory && (
               <ul>
                 <li>
+                  <Link to={""}>
+                    <FaHotjar />  Sảm Phẩm Hot
+                  </Link>
+                </li>
+                <li>
                   <Link to={""}>Trái Cây Tươi Nhập Khẩu</Link>
                 </li>
                 <li>
@@ -196,7 +206,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div >
+      <div>
         <div>{showProductPage && <ProductPage />}</div>
       </div>
     </>
