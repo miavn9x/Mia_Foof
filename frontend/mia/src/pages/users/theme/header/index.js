@@ -17,9 +17,6 @@ import React from "react";
 import { useState } from "react";
 import { FaHotjar } from "react-icons/fa";
 
-
-
-
 import "../../../../pages/users/theme/header/style.scss";
 
 import Carousel from "../../../../component/Carousel/index.js";

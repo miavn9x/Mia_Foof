@@ -3,429 +3,428 @@
 @import "../../../../../src/style/pages/responsive/";
 
 .header__top {
-    background-color: map.get($theme-colores, "main");
+  background-color: map.get($theme-colores, "main");
 }
 
 .header__top_left {
+  ul {
+    display: flex;
+    align-items: center;
+    padding: 11px 0 10px;
+    list-style: none; // Bỏ dấu chấm
+    column-gap: 14px;
+
+    li {
+      font-size: 15px;
+      color: map.get($theme-colores, "normal-text");
+      display: flex;
+      align-items: center;
+      column-gap: 14px;
+
+      @include responsive($TABLET) {
+        font-size: 14px;
+      }
+
+      @include responsive($MOBILE) {
+        font-size: 13px;
+        column-gap: 10px;
+      }
+    }
+
+    li:first-child {
+      position: relative;
+
+      &:after {
+        position: relative;
+        top: 1px;
+        height: 15px;
+        width: 1px;
+        background-color: #080808;
+        opacity: 0.5;
+        content: "";
+
+        @include responsive($MOBILE) {
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  @include responsive($TABLET) {
     ul {
-        display: flex;
-        align-items: center;
-        padding: 11px 0 10px;
-        list-style: none; // Bỏ dấu chấm
-        column-gap: 14px;
-
-        li {
-            font-size: 15px;
-            color: map.get($theme-colores, "normal-text");
-            display: flex;
-            align-items: center;
-            column-gap: 14px;
-
-            @include responsive($TABLET) {
-                font-size: 14px;
-            }
-
-            @include responsive($MOBILE) {
-                font-size: 13px;
-                column-gap: 10px;
-            }
-        }
-
-        li:first-child {
-            position: relative;
-
-            &:after {
-                position: relative;
-                top: 1px;
-                height: 15px;
-                width: 1px;
-                background-color: #080808;
-                opacity: 0.5;
-                content: "";
-
-                @include responsive($MOBILE) {
-                    height: 12px;
-                }
-            }
-        }
+      column-gap: 10px;
     }
+  }
 
-    @include responsive($TABLET) {
-        ul {
-            column-gap: 10px;
-        }
+  @include responsive($MOBILE) {
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+      column-gap: 0;
+      row-gap: 8px;
     }
-
-    @include responsive($MOBILE) {
-        ul {
-            flex-direction: column;
-            align-items: flex-start;
-            column-gap: 0;
-            row-gap: 8px;
-        }
-    }
+  }
 }
 
 .header__top_right {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding-right: 30px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 30px;
 
-    ul {
-        display: flex; //hien thi ngang
-        column-gap: 14px; // khoảng cách giữa các phần tử
-        list-style: none; // bỏ dấu chấm
+  ul {
+    display: flex; //hien thi ngang
+    column-gap: 14px; // khoảng cách giữa các phần tử
+    list-style: none; // bỏ dấu chấm
 
-        a {
-            font-size: 15px;
-            display: inline-block;
-            color: map.get($theme-colores, "normal-text");
-        }
-
-        li {
-            display: flex;
-        }
-        span {
-            font-size: 15px;
-            margin-left: 5px;
-            color: map.get($theme-colores, "normal-text");
-        }
+    a {
+      font-size: 15px;
+      display: inline-block;
+      color: map.get($theme-colores, "normal-text");
     }
+
+    li {
+      display: flex;
+    }
+    span {
+      font-size: 15px;
+      margin-left: 5px;
+      color: map.get($theme-colores, "normal-text");
+    }
+  }
 }
 
 .header__top_right ul:hover {
-    color: #00fda0;
+  color: #00fda0;
 }
 
-.header__{
+.header__ {
   margin: 0 auto;
-      display: flex;
-    justify-content: space-between;  
-.header__logo {
+  display: flex;
+  justify-content: space-between;
+  .header__logo {
     display: flex;
     padding: 15px 0;
     font-size: 22px;
     font-weight: bold;
 
     h1 {
-        margin: 0;
-        color: #0f2a1d;
-        animation: colorChange 6s ease-in-out infinite;
+      margin: 0;
+      color: #0f2a1d;
+      animation: colorChange 6s ease-in-out infinite;
 
-        /* Gradient mượt mà cho chữ logo */
-        background-image: linear-gradient(2deg, #0f2a1d, #e3eed4, #375534, #6b9071, #aec3b0);
-        background-clip: text;
-        color: transparent;
+      /* Gradient mượt mà cho chữ logo */
+      background-image: linear-gradient(2deg, #0f2a1d, #e3eed4, #375534, #6b9071, #aec3b0);
+      background-clip: text;
+      color: transparent;
     }
-}
+  }
 
-@keyframes colorChange {
+  @keyframes colorChange {
     0% {
-        background-position: 0%;
+      background-position: 0%;
     }
     50% {
-        background-position: 100%;
+      background-position: 100%;
     }
     100% {
-        background-position: 0%;
+      background-position: 0%;
     }
-}
+  }
 
-//menu
+  //menu
 
-.header__menu {
-
+  .header__menu {
     padding: 20px 0 19px 0px;
     border-bottom: 1px solid map.get($theme-colores, "border");
     :hover {
-        color: map.get($theme-colores, "secondary");
+      color: map.get($theme-colores, "secondary");
     }
     ///
 
     ul {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        list-style: none;
+        position: relative;
+        a {
+          text-decoration: none;
+          font-size: 17px;
+          color: map.get($theme-colores, "normal-text");
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: 2px;
+          transform: all 0.3s;
+          padding: 5px 0;
+          display: block;
+        }
+      }
+
+      li:hover .header__menu__dropdown {
+        opacity: 1;
+        visibility: visible;
+        color: white;
+        padding: 0 20px;
+        font-family: "Calibri", sans-serif;
+        font-size: 18px;
+      }
+
+      .active a {
+        color: map.get($theme-colores, "primary");
+      }
+
+      .header__menu__dropdown {
+        background-color: map.get($theme-colores, "primary");
+        display: block;
+        position: absolute;
+        width: 230px;
+        z-index: 9;
+        padding: 5px 0;
+        transition: all 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        margin-top: 19px;
 
         li {
-            list-style: none;
-            position: relative;
-            a {
-                text-decoration: none;
-                font-size: 17px;
-                color: map.get($theme-colores, "normal-text");
-                text-transform: uppercase;
-                font-weight: bold;
-                letter-spacing: 2px;
-                transform: all 0.3s;
-                padding: 5px 0;
-                display: block;
-            }
-        }
-
-        li:hover .header__menu__dropdown {
-            opacity: 1;
-            visibility: visible;
+          a {
+            text-transform: capitalize;
             color: white;
-            padding: 0 20px;
-            font-family: "Calibri", sans-serif;
-            font-size: 18px;
+            font-weight: 700;
+            padding: 5px 15px;
+          }
+          :hover {
+            color: map.get($theme-colores, "secondary");
+          }
         }
-
-        .active a {
-            color: map.get($theme-colores, "primary");
-        }
-
-        .header__menu__dropdown {
-            background-color: map.get($theme-colores, "primary");
-            display: block;
-            position: absolute;
-            width: 230px;
-            z-index: 9;
-            padding: 5px 0;
-            transition: all 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            margin-top: 19px;
-
-            li {
-                a {
-                    text-transform: capitalize;
-                    color: white;
-                    font-weight: 700;
-                    padding: 5px 15px;
-                }
-                :hover {
-        color: map.get($theme-colores, "secondary");
-                }
-            }
-        }
+      }
     }
+  }
+
+  // giỏ hàng
+  .header__cart {
+    display: flex;
+    column-gap: 5px;
+    justify-content: end;
+    align-items: center;
+    padding: 20px 0;
+
+    :hover {
+      color: map.get($theme-colores, "secondary");
+    }
+
+    ul {
+      display: flex;
+      margin-right: 10px;
+
+      li {
+        list-style: none;
+        position: relative;
+        margin-left: 10px;
+
+        svg {
+          font-size: 25px;
+          color: map.get($theme-colores, "normal-text");
+        }
+
+        span {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: map.get($theme-colores, "primary");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          color: #fff;
+        }
+
+        :link {
+          text-decoration: none;
+        }
+      }
+    }
+
+    // Search
+    .header__search {
+      display: flex;
+      align-items: center;
+
+      .header__search-input {
+        padding: 5px 6px;
+        font-size: 14px;
+        border: 1px solid map.get($theme-colores, "border");
+        border-radius: 4px;
+        width: 120px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: map.get($theme-colores, "primary");
+        }
+      }
+
+      .header__search-button {
+        padding: 5px 6px;
+        margin-left: 5px;
+        background-color: map.get($theme-colores, "primary");
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: map.get($theme-colores, "hover");
+        }
+
+        svg {
+          color: white;
+          font-size: 18px;
+        }
+      }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 1024px) {
+      // Tablet
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      ul {
+        margin-right: 0;
+
+        li {
+          svg {
+            font-size: 20px;
+          }
+
+          span {
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .header__search {
+        .header__search-input {
+          width: 100px;
+        }
+
+        .header__search-button {
+          padding: 4px 5px;
+          svg {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      // Mobile
+      flex-direction: column;
+      align-items: flex-start;
+
+      ul {
+        margin-bottom: 10px;
+
+        li {
+          margin-left: 5px;
+
+          svg {
+            font-size: 18px;
+          }
+
+          span {
+            width: 15px;
+            height: 15px;
+            font-size: 9px;
+          }
+        }
+      }
+
+      .header__search {
+        .header__search-input {
+          width: 90px;
+          font-size: 12px;
+          padding: 4px 5px;
+        }
+
+        .header__search-button {
+          padding: 4px;
+          margin-left: 3px;
+
+          svg {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
 }
 
-// giỏ hàng
-.header__cart {
-  display: flex;
-  column-gap: 5px;
-  justify-content: end;
-  align-items: center;
-  padding: 20px 0;
+.category__list {
+  position: relative;
+  z-index: 5;
+  .category_list_menu {
+    display: flex;
+    background: map.get($theme-colores, "primary");
+    padding: 15px 25px 15px 40px;
+    display: flex;
+    cursor: pointer;
+    font-weight: 700;
+    color: map.get($theme-colores, "normal-text");
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
 
-  :hover {
-    color: map.get($theme-colores, "secondary");
+    svg,
+    span {
+      font-size: 16px;
+      margin-right: 15px;
+    }
+    svg {
+      font-size: 22px;
+      font-weight: bold;
+    }
   }
 
   ul {
-    display: flex;
-    margin-right: 10px;
+    border: 1px solid white;
+    position: absolute;
+    width: 100%;
+    background: map.get($theme-colores, "background");
+    opacity: 1;
+    transition: all 0.3s ease;
 
     li {
       list-style: none;
       position: relative;
-      margin-left: 10px;
-
-      svg {
-        font-size: 25px;
-        color: map.get($theme-colores, "normal-text");
-      }
-
-      span {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: map.get($theme-colores, "primary");
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 12px;
-        color: #fff;
-      }
+      border-top: 1px solid map.get($theme-colores, "border");
+      border-bottom: 1px solid map.get($theme-colores, "border");
+      background: map.get($theme-colores, "main");
 
       :link {
         text-decoration: none;
       }
-    }
-  }
 
-  // Search
-  .header__search {
-    display: flex;
-    align-items: center;
-
-    .header__search-input {
-      padding: 5px 6px;
-      font-size: 14px;
-      border: 1px solid map.get($theme-colores, "border");
-      border-radius: 4px;
-      width: 120px;
-      transition: all 0.3s ease;
-
-      &:focus {
-        outline: none;
-        border-color: map.get($theme-colores, "primary");
-      }
-    }
-
-    .header__search-button {
-      padding: 5px 6px;
-      margin-left: 5px;
-      background-color: map.get($theme-colores, "primary");
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: map.get($theme-colores, "hover");
-      }
-
-      svg {
-        color: white;
-        font-size: 18px;
-      }
-    }
-  }
-
-  // Responsive adjustments
-  @media (max-width: 1024px) { // Tablet
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    ul {
-      margin-right: 0;
-
-      li {
-        svg {
-          font-size: 20px;
-        }
-
-        span {
-          width: 18px;
-          height: 18px;
-          font-size: 10px;
-        }
-      }
-    }
-
-    .header__search {
-      .header__search-input {
-        width: 100px;
-      }
-
-      .header__search-button {
-        padding: 4px 5px;
-        svg {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 768px) { // Mobile
-    flex-direction: column;
-    align-items: flex-start;
-
-    ul {
-      margin-bottom: 10px;
-
-      li {
-        margin-left: 5px;
-
-        svg {
-          font-size: 18px;
-        }
-
-        span {
-          width: 15px;
-          height: 15px;
-          font-size: 9px;
-        }
-      }
-    }
-
-    .header__search {
-      .header__search-input {
-        width: 90px;
-        font-size: 12px;
-        padding: 4px 5px;
-      }
-
-      .header__search-button {
-        padding: 4px;
-        margin-left: 3px;
-
-        svg {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-}
-}
-
-
-.category__list {
-    position: relative;
-    z-index: 5;
-    .category_list_menu {
-        display: flex;
-        background: map.get($theme-colores, "primary");
-        padding: 15px 25px 15px 40px;
-        display: flex;
-        cursor: pointer;
-        font-weight: 700;
+      a {
+        display: block;
+        padding: 15px 40px;
+        text-transform: capitalize;
         color: map.get($theme-colores, "normal-text");
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 15px;
-
-        svg,
-        span {
-            font-size: 16px;
-            margin-right: 15px;
-        }
-        svg {
-            font-size: 22px;
-            font-weight: bold;
-        }
+        font-weight: 700;
+        font-size: 16px;
+      }
     }
-
-
-    ul {
-        border: 1px solid white;
-        position: absolute;
-        width: 100%;
-        background: map.get($theme-colores, "background");
-        opacity: 1;
-        transition: all 0.3s ease;
-
-        li {
-            list-style: none;
-            position: relative;
-            border-top: 1px solid map.get($theme-colores, "border");
-            border-bottom: 1px solid map.get($theme-colores, "border");
-            background: map.get($theme-colores, "main");
-
-            :link {
-                text-decoration: none;
-            }
-
-
-            a {
-                display: block;
-                padding: 15px 40px;
-                text-transform: capitalize;
-                color: map.get($theme-colores, "normal-text");
-                font-weight: 700;
-                font-size: 16px;
-            }
-        }
-            :hover {
-        color: map.get($theme-colores, "secondary");
+    :hover {
+      color: map.get($theme-colores, "secondary");
     }
-    }
+  }
 }
+
 
